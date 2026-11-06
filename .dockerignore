@@ -1,0 +1,14 @@
+node_modules
+.next
+.next*
+.git
+.image-cache
+outputs
+dev-local.*
+*.log
+.DS_Store
+**/.DS_Store
+._*
+**/._*
+.env
+.env*.local

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="zibal-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0066FF"/>
+      <stop offset="100%" stop-color="#0044CC"/>
+    </linearGradient>
+    <filter id="zibal-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0055DD" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <!-- Background Badge -->
+  <rect width="92" height="92" x="4" y="4" rx="22" fill="#F4F8FF" stroke="#D8E7FF" stroke-width="1.5" filter="url(#zibal-shadow)"/>
+  <!-- Zibal Iconic Interlocking Shape -->
+  <g transform="translate(18, 14)">
+    <!-- Top Horizontal & Diagonal (Blue) -->
+    <path d="M48 6 H10 C7 6 5 8 5 11 v6 c0 3 2 5 5 5 h22 L6 50 c-2 3 -2 6 0 9 c1 2 3 3 5 3 h38 c3 0 5-2 5-5 v-6 c0-3 -2-5 -5-5 H22 L48 18 c3-3 3-8 0-12 z" fill="url(#zibal-grad)"/>
+    <!-- Complementary Green Notch -->
+    <circle cx="54" cy="11" r="5" fill="#00D084"/>
+  </g>
+  <!-- Typography "زیبال" -->
+  <text x="50" y="80" font-family="Vazirmatn, Tahoma, sans-serif" font-size="13" font-weight="bold" fill="#0044CC" text-anchor="middle" direction="rtl">زیـبـال</text>
+</svg>

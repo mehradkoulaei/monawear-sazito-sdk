@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="emalls-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF5252"/>
+      <stop offset="100%" stop-color="#E53935"/>
+    </linearGradient>
+    <filter id="emalls-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#E53935" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <!-- Background Badge -->
+  <rect width="92" height="92" x="4" y="4" rx="22" fill="#FFF6F5" stroke="#FFE2E0" stroke-width="1.5" filter="url(#emalls-shadow)"/>
+  
+  <!-- Emalls Shopping Bag Icon -->
+  <g transform="translate(23, 14)">
+    <!-- Bag Handle -->
+    <path d="M19 14 C19 7 35 7 35 14" stroke="#E53935" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <!-- Bag Body -->
+    <rect x="7" y="14" width="40" height="42" rx="9" fill="url(#emalls-grad)"/>
+    <!-- Stylized "e" on bag -->
+    <path d="M27 27 C20 27 16 32 16 38 C16 44 20 48 27 48 C32 48 35 46 37 43 L33 40 C32 42 30 43.5 27 43.5 C23 43.5 21 41 21 38.5 H37 C37.2 38 37.2 37 37 36 C36.5 30.5 33 27 27 27 Z M21.2 35 C21.7 32 24 30.5 27 30.5 C30 30.5 32 32 32.5 35 H21.2 Z" fill="#FFFFFF"/>
+    <!-- Eyelet dot -->
+    <circle cx="39" cy="20" r="2" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Typography "ایمالز" -->
+  <text x="50" y="80" font-family="Vazirmatn, Tahoma, sans-serif" font-size="12" font-weight="bold" fill="#E53935" text-anchor="middle" direction="rtl">ایمـالـز</text>
+</svg>

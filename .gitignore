@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production / Build outputs
+.next/
+.next-production/
+out/
+build/
+dist/
+outputs/
+.image-cache/
+docs/*-before/
+*.zip
+*.tar.gz
+
+# TypeScript / Env
+*.tsbuildinfo
+next-env.d.ts
+
+# Environment variables & secrets
+.env
+.env*.local
+.env.production
+.env.staging
+
+# Logs & temp files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dev-local.*
+.turbo/
+.vercel/
+
+# OS and IDE files
+.DS_Store
+**/.DS_Store
+._*
+**/._*
+.Spotlight-V100
+.Trashes
+.idea/
+.vscode/
+*.swp
+*.swo

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <filter id="zarehbin-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#5B21B6" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <!-- Background Badge -->
+  <rect width="92" height="92" x="4" y="4" rx="22" fill="#FBFBFE" stroke="#EDE9FE" stroke-width="1.5" filter="url(#zarehbin-shadow)"/>
+  
+  <!-- Zarehbin Magnifying Glass with Colorful Ring -->
+  <g transform="translate(18, 12)">
+    <!-- Lens Ring Segments -->
+    <!-- Blue/Cyan arc (top-right) -->
+    <path d="M32 6 A22 22 0 0 1 54 28" stroke="#0284C7" stroke-width="6.5" stroke-linecap="round" fill="none"/>
+    <!-- Yellow/Orange arc (bottom-right) -->
+    <path d="M54 28 A22 22 0 0 1 32 50" stroke="#F59E0B" stroke-width="6.5" stroke-linecap="round" fill="none"/>
+    <!-- Green arc (bottom-left) -->
+    <path d="M32 50 A22 22 0 0 1 10 28" stroke="#10B981" stroke-width="6.5" stroke-linecap="round" fill="none"/>
+    <!-- Purple arc (top-left) -->
+    <path d="M10 28 A22 22 0 0 1 32 6" stroke="#7C3AED" stroke-width="6.5" stroke-linecap="round" fill="none"/>
+    
+    <!-- Central focus dot -->
+    <circle cx="32" cy="28" r="7" fill="#6366F1"/>
+    
+    <!-- Magnifier Handle -->
+    <path d="M47 43 L60 56" stroke="#6366F1" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <!-- Typography "ذره‌بین" -->
+  <text x="50" y="80" font-family="Vazirmatn, Tahoma, sans-serif" font-size="12" font-weight="bold" fill="#4338CA" text-anchor="middle" direction="rtl">ذره‌بـیـن</text>
+</svg>

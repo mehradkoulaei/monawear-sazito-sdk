@@ -1,0 +1,56 @@
+[
+  {
+    "file": "mona-hero-restored.webp",
+    "source": "mona-hero-studio-1440.webp",
+    "sha256": "6c45363b4c20fed384238eac1670860382576932abb41ea39bc7f657cd4579f7",
+    "width": 1440,
+    "height": 1080,
+    "bytes": 100440,
+    "watermark": "embedded-v2"
+  },
+  {
+    "file": "mona-soft-restored.webp",
+    "source": "mona-soft-edit-studio-1120.webp",
+    "sha256": "f652fdd504be43daf60d1f928790e47b3920519051c798b6b6ae7f6c0dc82711",
+    "width": 1120,
+    "height": 1400,
+    "bytes": 53416,
+    "watermark": "embedded-v2"
+  },
+  {
+    "file": "mona-collection-1-restored.webp",
+    "source": "mona-category-1-studio-1200.webp",
+    "sha256": "453148784f59baeee1deec9c97ba411bc85e0dae486c75b99d578e593cefd447",
+    "width": 1200,
+    "height": 800,
+    "bytes": 68400,
+    "watermark": "original-branding-preserved"
+  },
+  {
+    "file": "mona-collection-2-restored.webp",
+    "source": "mona-category-2-studio-1200.webp",
+    "sha256": "2101aeddad1946bdc64828e5daf732145659cc0d4d7196351107be393fc51218",
+    "width": 1200,
+    "height": 800,
+    "bytes": 82724,
+    "watermark": "original-branding-preserved"
+  },
+  {
+    "file": "mona-collection-3-restored.webp",
+    "source": "mona-category-3-studio-1200.webp",
+    "sha256": "d46addb760532d6b6f0f64aed9029cadc46948f321ea5b3c39de9f201abd4ae2",
+    "width": 1200,
+    "height": 800,
+    "bytes": 65288,
+    "watermark": "original-branding-preserved"
+  },
+  {
+    "file": "mona-collection-4-restored.webp",
+    "source": "mona-category-4-studio-1200.webp",
+    "sha256": "b80d8842390dd963d7586f466595d4d19698e2f5ca3a1eaec06599221dc714eb",
+    "width": 1200,
+    "height": 800,
+    "bytes": 111216,
+    "watermark": "original-branding-preserved"
+  }
+]

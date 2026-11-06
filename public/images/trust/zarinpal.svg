@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 60 85" fill="none">
+  <defs>
+    <linearGradient id="zarinpal-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF066"/>
+      <stop offset="100%" stop-color="#FFC000"/>
+    </linearGradient>
+    <filter id="zarinpal-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <!-- Shield Background -->
+  <path d="M4 4 h52 c0 45 -26 65 -26 77 c0 -12 -26 -32 -26 -77 Z" fill="url(#zarinpal-bg)" stroke="#E5A800" stroke-width="1.5" filter="url(#zarinpal-shadow)"/>
+  <!-- Inner Border Line -->
+  <path d="M7 7 h46 c0 40 -23 58 -23 70 c0 -12 -23 -30 -23 -70 Z" fill="none" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="1"/>
+  <!-- ZarinPal Iconic Mark in Navy -->
+  <g fill="#0C2053" transform="translate(15, 18) scale(0.5)">
+    <path d="M48.4,11.7L19.7,40.3c-2.2,2.2-5.8,2.2-8,0l-2.2-2.2c-2.2-2.2-2.2-5.8,0-8L38.2,1.5c2.2-2.2,5.8-2.2,8,0l2.2,2.2C50.6,5.9,50.6,9.5,48.4,11.7z"/>
+    <path d="M11.1,10.0L22.3,10.0c0.9,0,1.4,1.1,0.8,1.8L11.9,23.0c-0.7,0.7-1.8,0.2-1.8-0.7L10.0,11.1C10.0,10.5,10.5,10.0,11.1,10.0z"/>
+    <path d="M48.9,50.0L37.7,50.0c-0.9,0-1.4-1.1-0.8-1.8l11.2-11.2c0.7-0.7,1.8-0.2,1.8,0.7l0.0,11.2C50.0,49.5,49.5,50.0,48.9,50.0z"/>
+    <!-- Central Ring Dot -->
+    <circle cx="30" cy="30" r="4.5" fill="#0C2053"/>
+  </g>
+  <!-- Persian Typography "زرین‌پال" -->
+  <text x="30" y="58" font-family="Vazirmatn, Tahoma, sans-serif" font-size="8.5" font-weight="bold" fill="#0C2053" text-anchor="middle" direction="rtl">زرین‌پال</text>
+  <text x="30" y="68" font-family="Vazirmatn, Tahoma, sans-serif" font-size="5" font-weight="500" fill="#2E4070" text-anchor="middle" direction="rtl">درگاه پرداخت امن</text>
+</svg>

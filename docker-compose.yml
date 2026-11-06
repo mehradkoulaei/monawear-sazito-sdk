@@ -1,0 +1,16 @@
+services:
+  monawear-storefront:
+    container_name: monawear-storefront
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - HOSTNAME=0.0.0.0
+      - NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL:-https://monawear.ir}
+      - SAZITO_DOMAIN=${SAZITO_DOMAIN:-monawear.ir}
+      - SAZITO_API_KEY=${SAZITO_API_KEY}
