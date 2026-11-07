@@ -78,10 +78,12 @@ export function buildMetadata({
     : [DEFAULT_OG_IMAGE];
 
   const primaryImage = typeof resolvedImages[0] === "string" ? resolvedImages[0] : resolvedImages[0].url;
-  const brandTitle = title.includes(siteConfig.name) ? title : `${title} | ${siteConfig.name}`;
+  const rawTitle = (title ?? "").trim();
+  const safeTitle = rawTitle || siteConfig.name;
+  const brandTitle = safeTitle.includes(siteConfig.name) ? safeTitle : `${safeTitle} | ${siteConfig.name}`;
 
   return {
-    title: absoluteTitle ? { absolute: brandTitle } : title,
+    title: absoluteTitle ? { absolute: brandTitle } : safeTitle,
     description,
     alternates: path ? { canonical: toPath(path) } : undefined,
     robots: noIndex ? { index: false, follow: false } : undefined,
@@ -105,6 +107,7 @@ export function buildMetadata({
 }
 
 export function buildProductMetadata(product: Product, path: string): Metadata {
+  const productName = product?.name || "محصول مونا";
   const summary = summarize(product);
   const { description: rawDesc } = splitAttributes(product.attributes);
   const cleanDesc = stripHtml(rawDesc, 140);
@@ -129,14 +132,14 @@ export function buildProductMetadata(product: Product, path: string): Metadata {
 
   const metaDesc = cleanDesc
     ? `${parts.join(" | ")} — ${cleanDesc}`
-    : `${parts.join(" | ")} — خرید آنلاین ${product.name} با تضمین کیفیت و ارسال سریع از فروشگاه پوشاک مونا.`;
+    : `${parts.join(" | ")} — خرید آنلاین ${productName} با تضمین کیفیت و ارسال سریع از فروشگاه پوشاک مونا.`;
 
   const images = (product.images ?? []).length > 0
     ? (product.images ?? []).slice(0, 4).map((img) => ({
         url: img.url,
         width: img.width || 1024,
         height: img.height || 1024,
-        alt: img.alt || product.name,
+        alt: img.alt || productName,
       }))
     : [DEFAULT_OG_IMAGE];
 
@@ -149,7 +152,7 @@ export function buildProductMetadata(product: Product, path: string): Metadata {
   }
 
   return buildMetadata({
-    title: product.name,
+    title: productName,
     description: metaDesc,
     path,
     images,
@@ -159,29 +162,31 @@ export function buildProductMetadata(product: Product, path: string): Metadata {
 }
 
 export function buildCategoryMetadata(category: ProductCategory, path: string, filtered = false): Metadata {
+  const categoryName = category?.name || "محصولات";
   const cleanDesc = stripHtml(category.description, 150);
-  const desc = cleanDesc || `مجموعه جدیدترین مدل‌های ${category.name} در پوشاک مونا؛ تصاویر، تنوع سایز و خرید اینترنتی با ارسال سریع.`;
-  const banner = getCategoryBanner(category.name || category.id);
+  const desc = cleanDesc || `مجموعه جدیدترین مدل‌های ${categoryName} در پوشاک مونا؛ تصاویر، تنوع سایز و خرید اینترنتی با ارسال سریع.`;
+  const banner = getCategoryBanner(categoryName || category.id);
 
   return buildMetadata({
-    title: `خرید و قیمت مدل‌های ${category.name}`,
+    title: `خرید و قیمت مدل‌های ${categoryName}`,
     description: desc,
     path,
-    images: [{ url: banner, width: 1200, height: 800, alt: category.name, type: "image/webp" }],
+    images: [{ url: banner, width: 1200, height: 800, alt: categoryName, type: "image/webp" }],
     noIndex: filtered,
   });
 }
 
 export function buildCmsMetadata(page: CmsPage | BlogPage, path: string, isBlog = false): Metadata {
+  const pageTitle = (page as any)?.title || page?.name || (isBlog ? "مجله مونا" : "صفحه");
   const cleanSummary = page.summary?.trim() || stripHtml(page.content, 150);
-  const desc = cleanSummary || `${page.name} در فروشگاه اینترنتی پوشاک مونا.`;
+  const desc = cleanSummary || `${pageTitle} در فروشگاه اینترنتی پوشاک مونا.`;
   const banner = page.image?.url || DEFAULT_OG_IMAGE.url;
 
   return buildMetadata({
-    title: isBlog ? `${page.name} | مجله پوشاک مونا` : page.name,
+    title: isBlog ? `${pageTitle} | مجله پوشاک مونا` : pageTitle,
     description: desc,
     path,
-    images: [{ url: banner, width: 1200, height: 630, alt: page.name }],
+    images: [{ url: banner, width: 1200, height: 630, alt: pageTitle }],
     type: isBlog ? "article" : "website",
   });
 }
