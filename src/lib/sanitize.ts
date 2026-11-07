@@ -16,7 +16,7 @@ export function sanitizeHtml(html: string): string {
     allowedSchemes: ["http", "https", "mailto", "tel"],
     transformTags: {
       a: sanitize.simpleTransform("a", { rel: "noopener noreferrer" }),
-      h1: sanitize.simpleTransform("h2"),
+      h1: sanitize.simpleTransform("h2", {}),
     },
   });
 }
