@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Brand } from "./brand";
 import { AtSign, Phone, Send } from "lucide-react";
 import { getCmsPages, getGeneral } from "@/lib/sazito/services";
@@ -190,21 +191,20 @@ export async function Footer() {
             href="https://sazito.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-1.5 transition-opacity hover:opacity-85"
+            className="group inline-flex items-center gap-1.5 transition-opacity hover:opacity-90"
             aria-label="قدرت‌گرفته از سازیتو"
           >
             <span className="font-medium text-muted-foreground/80">قدرت‌گرفته از</span>
-            <span className="font-semibold tracking-tight text-foreground transition-colors group-hover:text-burgundy">
+            <span className="font-bold tracking-tight bg-gradient-to-r from-[#7452E7] via-[#EC4899] to-[#F5BA55] bg-clip-text text-transparent transition-all group-hover:brightness-110">
               سازیتو
             </span>
-            <img
+            <Image
               src="/images/sazito-flame.png"
               alt="لوگوی سازیتو"
               width={20}
               height={13}
               loading="lazy"
-              decoding="async"
-              className="h-3.5 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-3.5 w-auto object-contain transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[-6deg]"
             />
           </a>
         </div>
