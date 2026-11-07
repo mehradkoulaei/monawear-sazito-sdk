@@ -11,7 +11,7 @@ build/
 dist/
 outputs/
 .image-cache/
-docs/*-before/
+docs/
 *.zip
 *.tar.gz
 
