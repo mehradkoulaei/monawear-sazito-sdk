@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { PaymentResult } from "@/components/checkout/payment-result";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "نتیجه پرداخت",
-  robots: { index: false },
-};
+export const metadata: Metadata = buildMetadata({
+  title: "نتیجه و وضعیت پرداخت سفارش | پوشاک مونا",
+  description: "رسید رسمی و اطلاعات وضعیت پرداخت سفارش در فروشگاه اینترنتی پوشاک مونا.",
+  path: "/checkout/result",
+  noIndex: true,
+});
 
 export default function ResultPage() {
   return (

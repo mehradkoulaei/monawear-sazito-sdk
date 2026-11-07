@@ -1,13 +1,23 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
 import { InteractiveSizeCalculator } from "@/components/products/interactive-size-calculator";
+import { buildMetadata } from "@/lib/metadata";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = {
-  title: "راهنمای سایز و محاسبه‌گر هوشمند",
-  description: "راهنمای دقیق سایزبندی پوشاک مونا و محاسبه‌گر هوشمند اندازه بر اساس دور سینه، کمر و باسن.",
-  alternates: { canonical: "/size-guide" },
-};
+export const metadata: Metadata = buildMetadata({
+  title: "راهنمای سایزبندی و محاسبه‌گر هوشمند اندازه | پوشاک مونا",
+  description: "راهنمای دقیق انتخاب سایز لباس زنانه، جدول استاندارد اندازه‌ها و محاسبه‌گر هوشمند سایز بر اساس دور سینه، دور کمر و دور باسن در پوشاک مونا.",
+  path: "/size-guide",
+  images: [
+    {
+      url: "/images/brand/v2/mona-category-2-studio-1200.webp",
+      width: 1200,
+      height: 800,
+      alt: "راهنمای سایزبندی پوشاک مونا",
+      type: "image/webp",
+    },
+  ],
+});
 
 export default function SizeGuidePage() {
   return (

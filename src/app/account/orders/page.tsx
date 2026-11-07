@@ -5,9 +5,15 @@ import { EmptyState, ErrorState } from "@/components/state";
 import { listMyOrders } from "@/lib/sazito/services";
 import { formatPrice } from "@/lib/utils";
 import type { SP } from "@/lib/listing";
+import { buildMetadata } from "@/lib/metadata";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = { title: "سفارش‌های من", robots: { index: false } };
+export const metadata: Metadata = buildMetadata({
+  title: "سفارش‌های من | پوشاک مونا",
+  description: "مشاهده تاریخچه سفارش‌ها، وضعیت ارسال و فاکتور خرید در پوشاک مونا.",
+  path: "/account/orders",
+  noIndex: true,
+});
 
 export default async function OrdersPage({ searchParams }: { searchParams: Promise<SP> }) {
   const sp = await searchParams;

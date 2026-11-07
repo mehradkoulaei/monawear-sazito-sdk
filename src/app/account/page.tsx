@@ -5,9 +5,15 @@ import { Heart, Package, Wallet } from "lucide-react";
 import { AuthForms } from "@/components/account/auth-forms";
 import { LogoutButton, ProfileForm } from "@/components/account/profile-form";
 import { getCurrentUser } from "@/lib/sazito/services";
+import { buildMetadata } from "@/lib/metadata";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = { title: "حساب کاربری", robots: { index: false } };
+export const metadata: Metadata = buildMetadata({
+  title: "حساب کاربری | پوشاک مونا",
+  description: "مدیریت حساب کاربری، مشخصات فردی و آدرس‌های ارسال در پوشاک مونا.",
+  path: "/account",
+  noIndex: true,
+});
 
 export default async function AccountPage() {
   const user = await getCurrentUser();

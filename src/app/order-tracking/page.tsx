@@ -5,9 +5,15 @@ import { OrderTrackingForm } from "@/components/account/order-tracking-form";
 import { ErrorState } from "@/components/state";
 import { getOrderByIdentifier } from "@/lib/sazito/services";
 import type { SP } from "@/lib/listing";
+import { buildMetadata } from "@/lib/metadata";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = { title: "پیگیری سفارش", robots: { index: false } };
+export const metadata: Metadata = buildMetadata({
+  title: "پیگیری وضعیت سفارش | پوشاک مونا",
+  description: "سامانه استعلام و پیگیری لحظه‌ای مرسوله‌های پستی و وضعیت ارسال سفارش‌ها در فروشگاه پوشاک مونا.",
+  path: "/order-tracking",
+  noIndex: true,
+});
 
 export default async function OrderTrackingPage({ searchParams }: { searchParams: Promise<SP> }) {
   const sp = await searchParams;

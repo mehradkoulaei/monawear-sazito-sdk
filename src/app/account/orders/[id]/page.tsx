@@ -5,9 +5,15 @@ import { OrderFeedback } from "@/components/account/order-feedback";
 import { ErrorState } from "@/components/state";
 import { getGeneral, getMyOrder } from "@/lib/sazito/services";
 import type { SP } from "@/lib/listing";
+import { buildMetadata } from "@/lib/metadata";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = { title: "جزئیات سفارش", robots: { index: false } };
+export const metadata: Metadata = buildMetadata({
+  title: "جزئیات سفارش | پوشاک مونا",
+  description: "مشاهده اقلام، صورت‌حساب و وضعیت پردازش سفارش در پوشاک مونا.",
+  path: "/account/orders",
+  noIndex: true,
+});
 
 export default async function OrderDetail({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<SP> }) {
   const { id } = await params;

@@ -17,9 +17,29 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: { default: `${siteConfig.name} | ${siteConfig.tagline}`, template: `%s | ${siteConfig.name}` },
   description: siteConfig.description,
-  openGraph: { type: "website", locale: siteConfig.locale, siteName: siteConfig.name, title: siteConfig.name, description: siteConfig.description, images: [{ url: "/images/brand/v2/mona-hero-studio-1440.webp", width: 1440, height: 1080, alt: siteConfig.name }] },
-  twitter: { card: "summary_large_image", title: siteConfig.name, description: siteConfig.description },
-
+  openGraph: {
+    type: "website",
+    locale: siteConfig.locale,
+    siteName: siteConfig.name,
+    title: `${siteConfig.name} | ${siteConfig.tagline}`,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    images: [
+      {
+        url: "/images/brand/v2/mona-hero-studio-1440.webp",
+        width: 1440,
+        height: 1080,
+        alt: `${siteConfig.name} - ${siteConfig.tagline}`,
+        type: "image/webp",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.name} | ${siteConfig.tagline}`,
+    description: siteConfig.description,
+    images: ["/images/brand/v2/mona-hero-studio-1440.webp"],
+  },
 };
 export const viewport: Viewport = { themeColor: "#5e1f2f", width: "device-width", initialScale: 1 };
 

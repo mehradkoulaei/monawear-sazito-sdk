@@ -3,9 +3,15 @@ import { redirect } from "next/navigation";
 import { EmptyState, ErrorState } from "@/components/state";
 import { getMyWallet } from "@/lib/sazito/services";
 import { formatDate, formatPrice } from "@/lib/utils";
+import { buildMetadata } from "@/lib/metadata";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = { title: "کیف پول", robots: { index: false } };
+export const metadata: Metadata = buildMetadata({
+  title: "کیف پول | پوشاک مونا",
+  description: "مشاهده موجودی کیف پول و گردش مالی در پوشاک مونا.",
+  path: "/account/wallet",
+  noIndex: true,
+});
 
 export default async function WalletPage() {
   const w = await getMyWallet();

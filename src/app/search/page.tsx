@@ -8,6 +8,7 @@ import { getCategories, getListingProducts, searchSite } from "@/lib/sazito/serv
 import { PAGE_SIZE, filterByTaxonomy, hasTaxonomyFilter, parseListing, type SP } from "@/lib/listing";
 import { siteConfig } from "@/config/site";
 import { toPath } from "@/lib/utils";
+import { buildMetadata } from "@/lib/metadata";
 
 export const dynamic = "force-dynamic";
 type Props = { searchParams: Promise<SP> };
@@ -16,22 +17,36 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const sp = await searchParams;
   const q = (Array.isArray(sp.q) ? sp.q[0] : sp.q)?.trim();
   const title = q
-    ? `جستجوی «${q}»`
+    ? `نتایج جستجوی «${q}» | پوشاک مونا`
     : sp.discounted
-    ? "محصولات تخفیف‌دار"
+    ? "تخفیف‌های ویژه و حراج پوشاک زنانه | پوشاک مونا"
     : sp.sort === "newest"
-    ? "تازه‌های مونا"
+    ? "جدیدترین مدل‌های پوشاک زنانه | تازه‌های مونا"
     : sp.sort === "best-selling"
-    ? "پرفروش‌های مونا"
-    : "همه محصولات";
-  return {
+    ? "پرفروش‌ترین مدل‌های پوشاک زنانه | پوشاک مونا"
+    : "فروشگاه و کاتالوگ محصولات | پوشاک مونا";
+
+  const description = q
+    ? `مشاهده و خرید آنلاین محصولات مرتبط با «${q}» در فروشگاه پوشاک مونا با ضمانت کیفیت.`
+    : sp.discounted
+    ? "حراج استثنایی انواع لباس خواب، بادی، ست‌های دو تکه و لباس راحتی زنانه با تخفیف‌های ویژه در پوشاک مونا."
+    : "کاتالوگ کامل پوشاک زنانه مونا؛ انواع بادی، ست خواب، لباس راحتی و فانتزی با ارسال سریع.";
+
+  return buildMetadata({
     title,
-    description: q
-      ? `نتایج جستجوی ${q} در پوشاک مونا`
-      : "مدل‌های پوشاک مونا را ببینید؛ قیمت، تصاویر و گزینه‌های هر محصول را مقایسه کنید.",
-    robots: Object.keys(sp).length ? { index: false, follow: true } : undefined,
-    alternates: { canonical: "/search" },
-  };
+    description,
+    path: "/search",
+    images: [
+      {
+        url: sp.discounted ? "/images/brand/mona-lilac-pajamas-1440.webp" : "/images/brand/v2/mona-hero-studio-1440.webp",
+        width: 1440,
+        height: 1080,
+        alt: title,
+        type: "image/webp",
+      },
+    ],
+    noIndex: Object.keys(sp).length > 0,
+  });
 }
 
 export default async function SearchPage({ searchParams }: Props) {

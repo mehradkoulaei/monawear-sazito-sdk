@@ -9,9 +9,23 @@ import { ProductRail } from "@/components/products/product-rail";
 import { RecentlyViewed } from "@/components/products/recently-viewed";
 import { getCategories, listProducts } from "@/lib/sazito/services";
 import { siteConfig } from "@/config/site";
+import { buildMetadata } from "@/lib/metadata";
 
 export const revalidate = 120;
-export const metadata: Metadata = { title: { absolute: `${siteConfig.name} | ${siteConfig.tagline}` }, description: siteConfig.description, openGraph: { title: siteConfig.name, description: siteConfig.description, url: "/", images: ["/images/brand/v2/mona-hero-studio-1440.webp"] }, alternates: { canonical: "/" } };
+export const metadata: Metadata = buildMetadata({
+  title: `${siteConfig.name} | ${siteConfig.tagline}`,
+  description: "فروشگاه آنلاین پوشاک مونا؛ خرید جدیدترین مدل‌های بادی، لباس خواب، ست‌های راحتی و فانتزی زنانه با تضمین کیفیت و ارسال سریع به سراسر کشور.",
+  path: "/",
+  images: [
+    {
+      url: "/images/brand/v2/mona-hero-studio-1440.webp",
+      width: 1440,
+      height: 1080,
+      alt: `${siteConfig.name} - ${siteConfig.tagline}`,
+      type: "image/webp",
+    },
+  ],
+});
 
 async function HomeCollections() {
   const [cats, fresh, best, disc] = await Promise.all([
