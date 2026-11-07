@@ -37,8 +37,8 @@ A modern, high-performance headless e-commerce storefront for Mona Wear, built w
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/mehradkoulaei/monawear-sdk.git
-   cd monawear-sdk
+   git clone https://github.com/mehradkoulaei/monawear-sazito-sdk.git
+   cd monawear-sazito-sdk
    ```
 
 2. **Install dependencies:**
