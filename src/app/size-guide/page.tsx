@@ -5,7 +5,7 @@ import { buildMetadata } from "@/lib/metadata";
 
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = buildMetadata({
-  title: "راهنمای سایزبندی و محاسبه‌گر هوشمند اندازه | پوشاک مونا",
+  title: "راهنمای سایزبندی و محاسبه‌گر هوشمند اندازه",
   description: "راهنمای دقیق انتخاب سایز لباس زنانه، جدول استاندارد اندازه‌ها و محاسبه‌گر هوشمند سایز بر اساس دور سینه، دور کمر و دور باسن در پوشاک مونا.",
   path: "/size-guide",
   images: [

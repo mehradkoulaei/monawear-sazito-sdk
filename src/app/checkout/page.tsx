@@ -5,7 +5,7 @@ import { buildMetadata } from "@/lib/metadata";
 
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = buildMetadata({
-  title: "ثبت و نهایی‌سازی سفارش | پوشاک مونا",
+  title: "ثبت و نهایی‌سازی سفارش",
   description: "درگاه امن ثبت اطلاعات، انتخاب روش ارسال و پرداخت سفارش در فروشگاه اینترنتی پوشاک مونا.",
   path: "/checkout",
   noIndex: true,

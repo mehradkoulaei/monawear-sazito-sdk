@@ -16,6 +16,7 @@ export const metadata: Metadata = buildMetadata({
   title: `${siteConfig.name} | ${siteConfig.tagline}`,
   description: "فروشگاه آنلاین پوشاک مونا؛ خرید جدیدترین مدل‌های بادی، لباس خواب، ست‌های راحتی و فانتزی زنانه با تضمین کیفیت و ارسال سریع به سراسر کشور.",
   path: "/",
+  absoluteTitle: true,
   images: [
     {
       url: "/images/brand/v2/mona-hero-studio-1440.webp",

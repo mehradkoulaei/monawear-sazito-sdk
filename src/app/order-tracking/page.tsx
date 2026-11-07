@@ -9,7 +9,7 @@ import { buildMetadata } from "@/lib/metadata";
 
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = buildMetadata({
-  title: "پیگیری وضعیت سفارش | پوشاک مونا",
+  title: "پیگیری وضعیت سفارش",
   description: "سامانه استعلام و پیگیری لحظه‌ای مرسوله‌های پستی و وضعیت ارسال سفارش‌ها در فروشگاه پوشاک مونا.",
   path: "/order-tracking",
   noIndex: true,

@@ -7,7 +7,7 @@ import { buildMetadata } from "@/lib/metadata";
 
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = buildMetadata({
-  title: "کیف پول | پوشاک مونا",
+  title: "کیف پول",
   description: "مشاهده موجودی کیف پول و گردش مالی در پوشاک مونا.",
   path: "/account/wallet",
   noIndex: true,

@@ -4,7 +4,7 @@ import { PaymentResult } from "@/components/checkout/payment-result";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata({
-  title: "نتیجه و وضعیت پرداخت سفارش | پوشاک مونا",
+  title: "نتیجه و وضعیت پرداخت سفارش",
   description: "رسید رسمی و اطلاعات وضعیت پرداخت سفارش در فروشگاه اینترنتی پوشاک مونا.",
   path: "/checkout/result",
   noIndex: true,

@@ -52,6 +52,7 @@ export interface SocialMetadataOptions {
   type?: "website" | "article";
   noIndex?: boolean;
   extraMeta?: Record<string, string | number>;
+  absoluteTitle?: boolean;
 }
 
 export const DEFAULT_OG_IMAGE: SocialImageObject = {
@@ -70,20 +71,22 @@ export function buildMetadata({
   type = "website",
   noIndex = false,
   extraMeta,
+  absoluteTitle = false,
 }: SocialMetadataOptions): Metadata {
   const resolvedImages = images?.length
     ? images.map((img) => (typeof img === "string" ? { url: img } : img))
     : [DEFAULT_OG_IMAGE];
 
   const primaryImage = typeof resolvedImages[0] === "string" ? resolvedImages[0] : resolvedImages[0].url;
+  const brandTitle = title.includes(siteConfig.name) ? title : `${title} | ${siteConfig.name}`;
 
   return {
-    title,
+    title: absoluteTitle ? { absolute: brandTitle } : title,
     description,
     alternates: path ? { canonical: toPath(path) } : undefined,
     robots: noIndex ? { index: false, follow: false } : undefined,
     openGraph: {
-      title,
+      title: brandTitle,
       description,
       url: toPath(path),
       siteName: siteConfig.name,
@@ -93,7 +96,7 @@ export function buildMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: brandTitle,
       description,
       images: [primaryImage],
     },
@@ -146,7 +149,7 @@ export function buildProductMetadata(product: Product, path: string): Metadata {
   }
 
   return buildMetadata({
-    title: `${product.name} | ${siteConfig.name}`,
+    title: product.name,
     description: metaDesc,
     path,
     images,
@@ -161,7 +164,7 @@ export function buildCategoryMetadata(category: ProductCategory, path: string, f
   const banner = getCategoryBanner(category.name || category.id);
 
   return buildMetadata({
-    title: `خرید و قیمت مدل‌های ${category.name} | ${siteConfig.name}`,
+    title: `خرید و قیمت مدل‌های ${category.name}`,
     description: desc,
     path,
     images: [{ url: banner, width: 1200, height: 800, alt: category.name, type: "image/webp" }],
@@ -175,7 +178,7 @@ export function buildCmsMetadata(page: CmsPage | BlogPage, path: string, isBlog 
   const banner = page.image?.url || DEFAULT_OG_IMAGE.url;
 
   return buildMetadata({
-    title: isBlog ? `${page.name} | مجله پوشاک مونا` : `${page.name} | ${siteConfig.name}`,
+    title: isBlog ? `${page.name} | مجله پوشاک مونا` : page.name,
     description: desc,
     path,
     images: [{ url: banner, width: 1200, height: 630, alt: page.name }],
