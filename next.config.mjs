@@ -1,9 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "standalone",
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   reactStrictMode: true,
   // Isolate verification builds from a running development server.
   distDir: process.env.MONA_BUILD_DIR || ".next",
